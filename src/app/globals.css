@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fdfaf7;
+  --foreground: #2c1810;
+
+  /* Romantic palette */
+  --rose-blush: #f9e4e4;
+  --rose-gold: #c9956c;
+  --cream: #fdf8f0;
+  --amber-warm: #e8c99a;
+  --stone-warm: #8b7355;
+  --petal-pink: #f2c4c4;
+  --deep-rose: #b5485a;
+  --soft-gold: #d4a96a;
+  --warm-white: #fffdf9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-rose-blush: var(--rose-blush);
+  --color-rose-gold: var(--rose-gold);
+  --color-cream: var(--cream);
+  --color-amber-warm: var(--amber-warm);
+  --color-stone-warm: var(--stone-warm);
+  --color-petal-pink: var(--petal-pink);
+  --color-deep-rose: var(--deep-rose);
+  --color-soft-gold: var(--soft-gold);
+  --color-warm-white: var(--warm-white);
+
+  --font-display: var(--font-cinzel);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--petal-pink);
+  color: var(--foreground);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #c9956c 0%, #b5485a 45%, #d4a96a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #d4a96a 0%, #c9956c 60%, #e8c99a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Decorative divider */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--rose-gold);
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rose-gold);
+  border-radius: 3px;
+}
